@@ -5,7 +5,7 @@ import InputField from './InputField';
 function GroceryList(props) {
 	console.log('props in GroceryList', props.item);
 	return (
-		<div>
+		<div id='boodschappen-container'>
 			<h2>Boodschappen</h2>
 			<InputField
 				inputGrocery={props.inputGrocery}

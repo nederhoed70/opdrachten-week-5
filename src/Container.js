@@ -40,21 +40,14 @@ class Container extends Component {
 	}
 	inputGrocery(event) {
 		event.preventDefault();
-		console.log(
-			'input',
-			event.value,
-			this.state.groceryItems.length,
-			this.state.shoppingListItems.length
-		);
-
 		this.setState(prevState => {
-			let newId = prevState.tempItems.id;
-			let newTitle = prevState.tempItems.title;
-			// let newGroceryItems = prevState.groceryItems.push(
-			// 	prevState.tempItems.title
-
-			//console.log(newGroceryItems);
-			return { ...prevState.groceryItems, id: newId, title: newTitle };
+			let newId = prevState.tempItems[0].id;
+			let newTitle = prevState.tempItems[0].title;
+			console.log('newid en title', newId, newTitle);
+			return prevState.groceryItems.push({
+				id: newId,
+				title: newTitle
+			});
 		});
 	}
 
@@ -75,15 +68,11 @@ class Container extends Component {
 	};
 
 	emptyCart() {
-		// this.setState(prevState => {
-		// 	const clearCart = prevState.shoppingListItems;
-		// 	return prevState.groceryItems.push(clearCart);
-		// });
 		this.setState({ shoppingListItems: [] });
-		// this.setState(state => {
-		// 	this.state.shoppingListItems = [];
-		// });
 	}
+	// componentDidUpdate() {
+	// 	this.setState({ tempItems: [] });
+	// }
 
 	render() {
 		const groceryList = this.state.groceryItems.map(item => {
@@ -95,7 +84,14 @@ class Container extends Component {
 		});
 
 		return (
-			<div>
+			<div
+				id='container'
+				style={{
+					display: 'flex',
+					alignItems: 'stretch',
+					justifyContent: 'space-around'
+				}}
+			>
 				<GroceryList
 					item={groceryList}
 					handleClick={this.handleClick}

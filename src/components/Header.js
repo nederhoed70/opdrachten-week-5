@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = () => {
 	return (
-		<div>
-			<h1>BoodschappenLijst</h1>
-		</div>
+		<header style={{ textAlign: 'center', backgroundColor: 'lightgrey' }}>
+			<h1 style={{ color: '#3a3a3a' }}>BoodschappenLijst</h1>
+		</header>
 	);
 };
 

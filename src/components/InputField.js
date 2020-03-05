@@ -2,7 +2,7 @@ import React from 'react';
 
 function InputField(props) {
 	return (
-		<form onSubmit={props.inputGrocery}>
+		<form name='boodschappenform' onSubmit={props.inputGrocery}>
 			<input
 				type='text'
 				name='boodschappen'

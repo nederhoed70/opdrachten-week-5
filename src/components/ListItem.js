@@ -11,6 +11,12 @@ class ListItem extends Component {
 				onClick={this.props.handleClick}
 				id={item.id}
 				name={item.title}
+				style={{
+					listStyle: 'none',
+					border: '2px solid #ccc',
+					padding: '10px',
+					margin: '4px 0px'
+				}}
 			>
 				{item.title}
 			</li>
