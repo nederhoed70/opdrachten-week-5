@@ -9,7 +9,7 @@ function GroceryList(props) {
 			<h2>Boodschappen</h2>
 			<InputField
 				inputGrocery={props.inputGrocery}
-				handleChange={props.handleChange}
+				handleInput={props.handleInput}
 				item={props.item}
 			/>
 			<List item={props.item} handleClick={props.handleClick} />

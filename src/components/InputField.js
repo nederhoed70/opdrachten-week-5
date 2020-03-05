@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function InputField(props) {
 	return (
@@ -6,7 +6,7 @@ function InputField(props) {
 			<input
 				type='text'
 				name='boodschappen'
-				onChange={props.handleChange}
+				onChange={props.handleInput}
 				value={props.value}
 				placeholder='nieuwe boodschap'
 			/>

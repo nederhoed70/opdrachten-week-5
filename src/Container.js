@@ -22,7 +22,7 @@ class Container extends Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.emptyCart = this.emptyCart.bind(this);
 		this.inputGrocery = this.inputGrocery.bind(this);
-		this.handleChange = this.handleChange.bind(this);
+		this.handleInput = this.handleInput.bind(this);
 	}
 	handleClick(event) {
 		this.handleChange(parseInt(event.target.id));
@@ -46,24 +46,33 @@ class Container extends Component {
 			this.state.groceryItems.length,
 			this.state.shoppingListItems.length
 		);
-		// let newId =
-		// 	this.state.groceryItems.length + this.state.shoppingListItems.length + 1;
-		// this.setState({
-		// 	groceryItems: [{ id: newId, title: this.tempItemsvalue }]
-		// });
+
+		this.setState(prevState => {
+			let newId = prevState.tempItems.id;
+			let newTitle = prevState.tempItems.title;
+			// let newGroceryItems = prevState.groceryItems.push(
+			// 	prevState.tempItems.title
+
+			//console.log(newGroceryItems);
+			return { ...prevState.groceryItems, id: newId, title: newTitle };
+		});
 	}
 
-	// handleChange = event => {
-	// 	const { value } = event.target;
-	// 	console.log(value);
-	// 	this.setState({
-	// 		tempItems: [
-	// 			{
-	// 				title: value
-	// 			}
-	// 		]
-	// 	});
-	// };
+	handleInput = event => {
+		const { name, value } = event.target;
+		console.log(value);
+		this.setState({
+			tempItems: [
+				{
+					id:
+						this.state.groceryItems.length +
+						this.state.shoppingListItems.length +
+						1,
+					title: value
+				}
+			]
+		});
+	};
 
 	emptyCart() {
 		// this.setState(prevState => {
@@ -91,7 +100,7 @@ class Container extends Component {
 					item={groceryList}
 					handleClick={this.handleClick}
 					inputGrocery={this.inputGrocery}
-					handleChange={this.handleChange}
+					handleInput={this.handleInput}
 				/>
 				<ShoppingCart item={cartList} emptyCart={this.emptyCart} />
 			</div>
