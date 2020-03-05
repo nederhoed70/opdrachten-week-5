@@ -1,13 +1,37 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+.container {
+	background-color: #000;
+	display: flexbox;
+}
+.boodschappen-container {
+	background-color: #000;
+	display: inline-flex;
+}
+.cart-container {
+	background-color: #000;
+	display: flex;
+}
+#boodschappen-container .listItems:nth-child(even) {
+	background-color: #61dafb;
+}
+#boodschappen-container .listItems:nth-child(odd) {
+	background-color: hsl(193, 95%, 91%);
+}
+#cart-container .listItems:nth-child(even) {
+	background-color: hsl(286, 96%, 71%);
+}
+#cart-container .listItems:nth-child(odd) {
+	background-color: hsl(286, 96%, 91%);
 }
