@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function clickItemList(event) {
-	const { key, value } = event.target;
-	console.log('clicked', key, value);
-	// this.setState = {
-	// 	list: 'cart'
-	// };
-}
-
-function ListItem(props) {
-	const list = props.item.map(item => <li key={item.id}>{item.title}</li>);
-	return list;
+class ListItem extends Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return this.props.item.map(item => (
+			<li
+				key={item.id}
+				onClick={this.props.handleClick}
+				id={item.id}
+				name={item.title}
+			>
+				{item.title}
+			</li>
+		));
+	}
 }
 
 export default ListItem;
