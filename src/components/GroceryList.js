@@ -3,9 +3,8 @@ import List from './List';
 import InputField from './InputField';
 
 function GroceryList(props) {
-	console.log('props in GroceryList', props.item);
 	return (
-		<div id='boodschappen-container'>
+		<div id='boodschappen-container' style={{ width: '25%' }}>
 			<h2>Boodschappen</h2>
 			<InputField
 				inputGrocery={props.inputGrocery}

@@ -23,3 +23,15 @@ code {
 	background-color: #000;
 	display: flex;
 }
+#boodschappen-container .listItems:nth-child(even) {
+	background-color: #61dafb;
+}
+#boodschappen-container .listItems:nth-child(odd) {
+	background-color: hsl(193, 95%, 91%);
+}
+#cart-container .listItems:nth-child(even) {
+	background-color: hsl(286, 96%, 71%);
+}
+#cart-container .listItems:nth-child(odd) {
+	background-color: hsl(286, 96%, 91%);
+}
