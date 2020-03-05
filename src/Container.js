@@ -53,17 +53,17 @@ class Container extends Component {
 		// });
 	}
 
-	handleChange = event => {
-		const { name, value } = event.target;
-		console.log(value);
-		this.setState({
-			tempItems: [
-				{
-					title: value
-				}
-			]
-		});
-	};
+	// handleChange = event => {
+	// 	const { value } = event.target;
+	// 	console.log(value);
+	// 	this.setState({
+	// 		tempItems: [
+	// 			{
+	// 				title: value
+	// 			}
+	// 		]
+	// 	});
+	// };
 
 	emptyCart() {
 		// this.setState(prevState => {
